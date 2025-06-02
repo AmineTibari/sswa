@@ -1,0 +1,9 @@
+<form class="urls" method="POST">
+  <input type="url" placeholder="page url" name="url" value="{{ url }}" required><br><br>
+  <select name="scan_type" required>
+    <option value="SQLi">SQLI</option>
+    <option value="XSS">XSS</option>
+    <option value="CSRF">CSRF</option>
+  </select><br><br>
+  <button type="submit">scan</button>
+</form>
