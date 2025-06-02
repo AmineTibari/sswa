@@ -1,0 +1,31 @@
+header {
+    display: flex;
+    background: #2196f3;
+    justify-content: space-between;
+    padding: 25px;
+    font-family: "Roboto", sans-serif;
+    align-items: center;
+}
+header span {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+}
+header nav {
+    display: flex;
+}
+header nav li {
+    list-style: none;
+    margin: 0 10px;
+}
+header nav li a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid #ffffff;
+    padding: 5px 10px;
+    width: 125px;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
