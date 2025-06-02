@@ -1,0 +1,31 @@
+
+
+<div class="result-content-header">
+
+
+    <span>Vulnerability Status</span>
+    <span>Injected Fields</span>
+    <span>Payload Used</span>
+    <span>HTTP Status Code</span>
+    <span>Content Difference Ratio</span>
+    <span>SQL Error Detected</span>
+    <span>Title Changed</span>
+    <span>HTML Tag Difference</span>
+    <span>Severity Level</span>
+
+</div>
+
+{% for res in result %}
+<div class="result-content-element" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+    <span class="white-text {{ 'orange' if res.vulnerable else 'green' }}">{{ res.vulnerable }}</span>
+    <span>{{ res.fields }}</span>
+    <span>{{ res.payload }}</span>
+    <span class="white-text {{ 'green' if res.status == 200 else 'red' }}">{{ res.status }}</span>
+    <span>{{ res.difference }}</span>
+    <span class="white-text {{ 'red' if res.analysis.has_sql_error else 'green' }}">{{ res.analysis.has_sql_error }}</span>
+    <span>{{ res.analysis.title_changed }}</span>
+    <span>{{ res.analysis.tag_diff }}</span>
+    <span class="white-text {{ 'red' if res.severity == 'High' else 'orange' if res.severity == 'Medium' else 'green' if res.severity == 'Low' }}">{{ res.severity }}</span>
+</div>
+{% endfor %}
+
