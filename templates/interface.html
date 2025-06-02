@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSWA - Smart Security Web Auditor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='url-section.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+{% include "header.html" %}
+
+<section class="url-section-class" style="">
+    {% include "url-section.html" %}
+</section>
+
+<section class="result-section-class">
+    {% if result %}
+    <div class="result-section-header">
+        <h2 id="page-title">Scan Result for the Page:</h2>
+        <p id="url-title">{{ url }}</p>
+    </div>
+
+
+    {% include "result.html" %}
+    {% endif %}
+</section>
+
+
+</body>
+</html>
